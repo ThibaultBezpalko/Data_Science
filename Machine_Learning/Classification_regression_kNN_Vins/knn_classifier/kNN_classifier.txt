@@ -1,0 +1,12 @@
+# Résultat :
+Que ce soit par la fonction de validation croisée "maison" ou par la fonction
+"GridSearch" implémentée dans scikit, les performances de l'algorithme kNN
+reste équivalente : aux alentours de 50-55 % en ce qui concerne la prévision
+des notes des vins (en effet, si on teste, comme dans le tp, le simple fait que
+le vin est médiocre ou non, càd une note inférieure/supérieure à 6, on obtient 
+plutôt 70 % de réussite).
+
+# Comparaison des performances :
+Après plusieurs essais, l'hyperparamètre est le même, que ce soit avec la fonction
+de Scikit ou la fonction que j'ai construite. Les scores sont logiquement
+identiques.

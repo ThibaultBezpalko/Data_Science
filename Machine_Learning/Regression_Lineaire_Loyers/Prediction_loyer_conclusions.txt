@@ -1,0 +1,21 @@
+Traitement des données : 
+- sélection des loyers inférieurs à 6500 euros, les loyers supérieurs 
+étant très loin de la droite de régression
+- nettoyage léger des données en enlevant les lignes où certaines cases
+sont vides
+
+
+Modèle en utilisant la fonction de régression implémentée dans scikit-learn :
+	Loyer en fonction de la surface seule
+	y_prédit = 316.7 + 27.4 * surface
+	Pourcentage d'erreur : 0.22241010238872594
+Si on relance le calcul, le training set change et le pourcentage d'erreur varie
+aux alentours de 20 %.
+
+
+J'ai donc décidé de rechercher un modèle par arrondissement, bien plus pertinent.
+On constate, comme cela est attendu, que l'ordonnée à l'origine varie entre 200 et
+plus de 600 euros en fonction de l'arrondissement.
+De même, les coefficients directeurs varient de 20 à 30 euros par mètre carré.
+Les pourcentages d'erreurs varient en fonction des valeurs du training
+set.

@@ -1,0 +1,13 @@
+# Comparaison des résultats :
+Après plusieurs essais, les performances des deux fonctions de validations 
+croisées, "maison" ou "implémentée dans Scikit", sont identiques.
+La MSE tourne autour de 0,4 et le R² autour de 0,3 (ce qui n'est pas bon pour 
+une régression linéaire...).
+
+On constate que les validations croisées permettent d'obtenir de bien meilleures 
+performances que l'approche naïve avec la moyenne (3,3 au lieu de 0,4 : erreur 
+divisée par 8) et que l'approche naïve "aléatoire" (0,6 au lieu de 0,4 : 
+diminution de 30 % de l'erreur tout de même).
+Je ne compare pas le R² des approches naïves qui ne signifient rien, que ce soit
+dans le cas de la valeur moyenne toujours renvoyée (fonction constante) ou des
+valeurs aléatoires, qui ne peuvent pas être corrélées.

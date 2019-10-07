@@ -1,0 +1,52 @@
+Attention, les valeurs d'accuracy peuvent varier quand on relance 
+l'entraînement.
+Cependant, après plusieurs essais, il semble que les tendances restent
+les mêmes.
+
+
+
+xxxx Evaluation des performances des différents modèles
+
+Baseline avec le kNN :
+- on choisit un k de 2 ou 3 pour le classifieur kNN.
+- après entrainement sur différents training sets, la précision du kNN
+oscille aux alentours de 85 %.
+
+
+On choisit de demander à l'algorithme de résoudre la forme primale du 
+problème puisqu'il y a plus d'observations (1000 en tout, 800 pour le 
+train set) que de variables (192).
+
+SVM avec approche One-Versus-Rest : 
+- la précision est sensiblement meilleure que pour le kNN : 96 % > 84 %.
+(Les valeurs oscillent autour de 94 % en fonction du partage train/test)
+- le temps d'entraînement est relativement rapide.
+
+SVM avec approche Crammer-Singer :
+- la précision est sensiblement meilleure que pour le kNN : 94 % > 84 %
+(Les valeurs oscillent autour de 92 % en fonction du partage train/test)
+- le temps d'entraînement est plus long que pour le SVM Crammer-Singer.
+
+
+
+xxxx Commentaires généraux :
+- On peut utiliser tester plus de valeurs d'hyperparamètres (30 au lieu
+de 10). Cela prend bien entendu plus de temps mais parfois, on trouve en 
+général un hyperparamètre qui rend le modèle un peu plus performant (gain 
+de 1 %).
+- En général, le SVM OVR est un peu plus performant que le SVM Crammer-Singer
+mais il arrive qu'ils atteignent la même précision. Cela dépend de la répartition
+des données dans les sets d'entraînement et de test.
+- le changement de régularisation (ridge, lasso) influe peu sur 
+les résultats. On distingue tout de même que la régularisation ridge (l2) est un
+peu plus efficace : un gain de précision de 1 ou 2 % en moyenne.
+
+
+
+xxxx Sélection du modèle final : 
+- L'utilisation du SVM permet un gain substantiel en précision : + 10 %.
+- En termes de temps, le SVM standard avec 
+l'approche One-Versus-Rest semble plus performant que le SVM avec 
+l'approche Crammer-Singer. On le choisira donc si on a une contrainte de temps.
+- on privilégiera la régularisation ridge (l2).
+- le paramètre C avec une valeur aux alentours de 50 donne les meilleurs résultats.
